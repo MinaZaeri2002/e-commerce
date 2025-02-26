@@ -1,0 +1,43 @@
+# Virtual Environment
+venv/
+env/
+.venv/
+
+# Database files
+*.sqlite3
+*.db
+
+# Log files
+*.log
+
+# Sensitive configuration files
+settings.py
+secrets.json
+*.env
+
+# Django generated files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Static and media files
+staticfiles/
+media/
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Package installation files
+node_modules/
+.cache/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Test files
+tests/output/
