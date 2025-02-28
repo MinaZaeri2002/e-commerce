@@ -1,0 +1,190 @@
+.flex-basis-15{
+  flex-basis: 15%;
+}
+
+.flex-basis-55{
+  flex-basis: 55%;
+}
+
+.select {
+  padding-left: 0;
+  border: 0;
+  float: none;
+  height: unset;
+  line-height: unset;
+  @include tablet {
+    line-height: 50px;
+  }
+  @include mobile {
+    line-height: unset;
+  }
+}
+
+.r-0{
+  right: 0;
+}
+
+.shop-list {
+  li {
+    a {
+      &:hover {
+        color: $text-color;
+      }
+    }
+  }
+}
+
+.custom-checkbox {
+  color: $text-color-light;
+  cursor: pointer;
+  label{
+    cursor: pointer;
+  }
+  &:hover {
+    color: $text-color;
+
+    .box {
+      background: transparent;
+      border: 1px solid $text-color;
+    }
+  }
+
+  &.checked {
+    color: $text-color;
+  }
+}
+
+.label {
+  display: block;
+  padding: 7px 0px 7px 30px;
+  position: relative;
+  width: 100%;
+  margin-bottom: 0;
+
+  input {
+    display: none;
+  }
+
+  input:checked {
+    &~.box {
+      background: $gray;
+      border: 1px solid $text-color;
+
+      &::before {
+        display: block;
+      }
+    }
+  }
+}
+
+.box {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid $text-color-light;
+  position: absolute;
+  top: 12px;
+  left: 0;
+
+  &::before {
+    position: absolute;
+    content: "";
+    height: 9px;
+    width: 9px;
+    border-radius: 50%;
+    background: $text-color;
+    top: 2px;
+    left: 2px;
+    display: none;
+  }
+}
+/* custom radio */
+.radio{
+  display: block;
+  position: relative;
+  input {
+    &:checked ~ .radio-box {
+      &::before{
+        position: absolute;
+        content: "";
+        height: 7px;
+        width: 15px;
+        background: transparent;
+        border: 2px solid transparent;
+        border-left-color: $white;
+        border-bottom-color: $white;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+    }
+  }
+  &-box {
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
+
+// Slider Style Change
+.slider {
+  margin-bottom: 20px;
+
+  &.slider-horizontal {
+    width: 100%;
+    height: 4px;
+
+    .slider-track {
+      height: 4px;
+    }
+  }
+}
+
+.slider.slider-horizontal .slider-tick,
+.slider.slider-horizontal .slider-handle {
+  margin-left: 0px;
+}
+
+.slider-track {
+  background: $gray;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.slider-selection {
+  background: $dark;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.slider-handle {
+  background: $white;
+  height: 13px;
+  width: 13px;
+  border: 3px solid $dark;
+  margin-top: -7px;
+}
+
+.page-item{
+  &.active{
+    .page-link{
+      color: $text-color;
+      background: transparent;
+    }
+  }
+  .page-link{
+    border: 0;
+    color: $text-color-light;
+    &:hover{
+      background: transparent;
+    }
+    &:focus{
+      box-shadow: none;
+    }
+  }
+}

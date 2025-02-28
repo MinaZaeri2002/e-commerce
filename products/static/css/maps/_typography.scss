@@ -1,0 +1,55 @@
+/* 1.1 typography */
+
+@font-face {
+  font-family: 'futura_icgregular';
+  src: url('../fonts/futuraicg-webfont.woff2') format('woff2'),
+       url('../fonts/futuraicg-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  line-height: 26px;
+  font-family: $primary-font;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  font-size: 15px;
+}
+
+p, .paragraph {
+  font-weight: 400;
+  color: $text-color;
+  font-size: 15px;
+  line-height: 26px;
+  font-family: $primary-font;
+}
+
+h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
+  color: $text-color;
+  font-family: $primary-font;
+  font-weight: 400;
+}
+
+h1, .h1{
+  font-size: 44px;
+}
+
+h2, .h2{
+  font-size: 30px;
+}
+
+h3, .h3{
+  font-size: 26px;
+}
+
+h4, .h4{
+  font-size: 20px;
+}
+
+h5, .h5{
+  font-size: 16px;
+}
+
+h6, .h6{
+  font-size: 13px;
+}

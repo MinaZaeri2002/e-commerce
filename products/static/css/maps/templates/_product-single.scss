@@ -1,0 +1,145 @@
+.product-slider {
+  overflow: hidden;
+  cursor: -webkit-zoom-in;
+
+  .prevArrow,
+  .nextArrow {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-60%);
+    z-index: 9;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background: rgba($color: $primary-color, $alpha: .5);
+    color: $white;
+    border: 0;
+    font-size: 20px;
+    line-height: 50px;
+    opacity: 0;
+    transition: all linear .2s;
+
+    &:focus {
+      outline: 0;
+    }
+
+    &:hover {
+      background: rgba($color: $primary-color, $alpha: .5);
+    }
+  }
+
+  .prevArrow {
+    left: -20px;
+  }
+
+  .nextArrow {
+    right: -20px;
+  }
+
+  &:hover {
+
+    .prevArrow {
+      left: 20px;
+      opacity: 1;
+    }
+
+    .nextArrow {
+      right: 20px;
+      opacity: 1;
+    }
+  }
+
+  .slick-dots {
+    margin-top: 10px;
+    display: flex;
+
+    li {
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      img {
+        height: auto;
+        max-width: 100%;
+      }
+    }
+  }
+
+  span {
+    display: block;
+  }
+}
+
+.bootstrap-touchspin .input-group-btn-vertical>.btn{
+  color: $text-color;
+  right: 9px;
+  @include mobile {
+    right: 0;
+  }
+  &:hover{
+    border-color: $border-color;
+  }
+}
+
+.bootstrap-touchspin-up{
+  border-left: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
+}
+
+.bootstrap-touchspin-down{
+  border-left: 1px solid $border-color;
+}
+
+.quantity{
+  border-radius: 40px !important;
+  position: relative;
+}
+
+.payment-option{
+  h5{
+    transform: translateY(-15px);
+    display: inline-block;
+    margin-left: 15px;
+    padding: 5px;
+  }
+  img{
+    margin-top: -25px;
+  }
+}
+
+.features-list{
+  padding-left: 25px;
+  li{
+    position: relative;
+    margin-bottom: 5px;
+    &::before{
+      position: absolute;
+      content: "";
+      height: 8px;
+      width: 8px;
+      background: $primary-color;
+      border-radius: 50%;
+      top: 8px;
+      left: -25px;
+    }
+  }
+}
+
+.customer-name{
+  position: relative;
+  margin-left: 30px;
+  &::before{
+    position: absolute;
+    content: "";
+    height: 1px;
+    width: 20px;
+    background: $text-color-dark;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -30px;
+  }
+}

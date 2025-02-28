@@ -1,0 +1,17 @@
+#map_canvas{
+  height: 500px;
+  @include mobile {
+    height: 300px;
+  }
+}
+
+textarea.form-control{
+  height: 150px;
+  padding-top: 10px;
+}
+
+.contact-icon{
+  font-size: 40px;
+  margin-right: 25px;
+  color: $text-color;
+}

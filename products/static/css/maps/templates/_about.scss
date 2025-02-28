@@ -1,0 +1,32 @@
+.about-img-bg {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    height: 365px;
+    width: 365px;
+    border-radius: 50%;
+    right: 0;
+    top: 55px;
+    background: transparent;
+    border: 40px solid $gray;
+    z-index: -1;
+    @include mobile-xs {
+      display: none;
+    }
+  }
+}
+
+.team-member{
+  .social-icons a{
+    transform: scale(0);
+  }
+  &:hover{
+    .social-icons{
+      a{
+        transform: scale(1);
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.coming-soon {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding: 150px 0;
+  height: 100vh;
+  @include tablet {
+    height: 100%;
+  }
+}
+
+.block {
+  .syotimer {
+    &-cell {
+      height: 120px;
+      width: 120px;
+
+      @include desktop {
+        margin-bottom: 14px;
+      }
+
+      &__value {
+        font-size: 40px;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        color: $white;
+      }
+
+      &__unit {
+        font-size: 20px;
+        color: $text-color-light;
+      }
+    }
+  }
+}
