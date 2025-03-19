@@ -1,4 +1,6 @@
 import os
+from datetime import datetime
+from logging import Filter
 from pathlib import Path
 from dotenv import load_dotenv
 
@@ -19,6 +21,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'captcha',
 
     'products',
     'users',
@@ -107,3 +111,57 @@ STATIC_ROOT = BASE_DIR / 'static'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'users.User'
+
+AUTHENTICATION_BACKENDS = [
+    'users.backends.MultiFieldAuthBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+RECAPTCHA_PUBLIC_KEY = os.environ.get("RECAPTCHA_PUBLIC_KEY")
+RECAPTCHA_PRIVATE_KEY = os.environ.get("RECAPTCHA_PRIVATE_KEY")
+
+
+class PermissionCheckFilter(Filter):
+    def filter(self, record):
+        return "Checking permission" not in record.getMessage()
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'filters': {
+        'permission_filter': {
+            '()': PermissionCheckFilter,
+        },
+    },
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {message}',
+            'style': '{',
+            'datefmt': '%Y-%m-%d',
+        },
+    },
+    'handlers': {
+        'daily_file': {
+            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'filename': os.path.join('/home/mina/project/logs', datetime.now().strftime('%Y-%m-%d.log')),
+            'when': 'midnight',
+            'interval': 1,
+            'backupCount': 365,
+            'formatter': 'verbose',
+            'encoding': 'utf-8',
+        },
+    },
+    'loggers': {
+        'users': {
+            'handlers': ['daily_file'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+        'products': {
+            'handlers': ['daily_file'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+    },
+}
